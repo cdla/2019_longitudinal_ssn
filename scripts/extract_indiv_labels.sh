@@ -14,9 +14,8 @@ for subj in `cd ${SUBJECTS_DIR}; ls -d 0* 1* 2* 3* 4*`; do
         echo "working on parc ${parc}"
         for hemi in lh rh; do
 
-            mkdir -pv ${OUTDIR}/${subj}/${parc}
-            mri_annotation2label --subject ${subj} --hemi ${hemi} --outdir ${OUTDIR}/${subj}/${parc} \
-            --labelbase ${hemi}_${parc}_label
+            mkdir -pv ${OUTDIR}/${subj}/${parc}_${hemi}
+            mri_annotation2label --subject ${subj} --hemi ${hemi} --outdir ${OUTDIR}/${subj}/${parc}_${hemi} \
 
         done
     done
